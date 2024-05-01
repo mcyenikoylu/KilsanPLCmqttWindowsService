@@ -4,6 +4,8 @@ using System.Linq;
 using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration.Install;
+using System.Reflection;
 
 namespace KilsanPLCmqttWindowsService
 {
@@ -12,7 +14,7 @@ namespace KilsanPLCmqttWindowsService
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        static void Main(string[] args)
         {
             //ServiceBase[] ServicesToRun;
             //ServicesToRun = new ServiceBase[]
@@ -33,6 +35,26 @@ namespace KilsanPLCmqttWindowsService
                 new Service1()
             };
             ServiceBase.Run(ServicesToRun);
+            //if (Environment.UserInteractive)
+            //{
+            //    var parameter = string.Concat(args);
+            //    switch (parameter)
+            //    {
+            //        case "--install":
+            //            ManagedInstallerClass.InstallHelper(new[] { Assembly.GetExecutingAssembly().Location });
+            //            break;
+            //        case "--uninstall":
+            //            ManagedInstallerClass.InstallHelper(new[] { "/u", Assembly.GetExecutingAssembly().Location });
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    ServiceBase[] servicesToRun = {
+            //        new Service1()
+            //    };
+            //    ServiceBase.Run(servicesToRun);
+            //}
 #endif
         }
     }

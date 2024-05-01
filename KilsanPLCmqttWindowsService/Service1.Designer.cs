@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // Service1
+            // 
+            this.AutoLog = false;
+            this.ServiceName = "Kilsan PLC Service";
+
         }
 
         #endregion
